@@ -14,16 +14,43 @@
 body
     position: relative
     color: $white
-    &::before
-        position: fixed
+    background: url('../img/bg-m.jpg') #002a34 repeat-y top center
+    background-size: 600px auto
+
+.kv-first,
+.kv,
+.intro,
+.design,
+.box,
+.product
+    width: 100%
+    max-width: 600px
+    margin: auto
+
+.kv-first
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    min-height: 80vh
+    padding: 10% 0
+    .deco
         display: block
-        content: ''
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-        background: url('../img/bg.jpg') no-repeat center center
-        background-size: cover
+        width: 8%
+        margin: 0 auto
+        transform: rotate(90deg)
+    .kv-first-title
+        display: block
+        width: 90%
+        margin: 0 auto
+        margin-bottom: 8%
+    .hr
+        display: block
+        width: 80%
+        margin: 0 auto
+        margin-top: 12%
+
 .kv
     position: relative
     width: 100%
@@ -32,71 +59,54 @@ body
         position: sticky
         top: 0
         left: 0
-        margin: auto
-        width: 100%! important
+        width: 100%
+        height: 50%
         overflow: hidden
         .kv-scale
             position: relative
-            left: 50%
-            width: 1680px
-            height: 803px
-            transform-origin: center top
-            overflow: hidden
+            width: 100%
+            padding-top: percentage(925/758)
+            +centerAb
             > img
                 position: absolute
-            .kv-palace,
             .kv-frame
                 top: 0
                 left: 0
-                transition: opacity 1s, transform 1s
             .kv-table
-                width: 50%
+                width: 70%
                 margin: auto
                 left: 0
                 right: 0
-                bottom: 0
-                transition: opacity 1s, transform 1s
-            .kv-title
-                width: 30%
-                left: 35%
-                top: 3.4%
-                transition: opacity 1s, transform 1s
+                bottom: 4%
+                transition: opacity 1s
             .kv-tea-left
-                width: 5%
-                bottom: 11%
-                left: 43%
-                transition: opacity 1s, transform 1s
+                width: 10%
+                bottom: 12.5%
+                left: 32%
+                transition: opacity 1s
             .kv-tea-right
-                width: 5%
-                bottom: 11%
-                right: 43%
-                transition: opacity 1s, transform 1s
+                width: 10%
+                bottom: 12.5%
+                right: 32%
+                transition: opacity 1s
             .kv-teapot-left
-                width: 7%
-                bottom: 18%
-                left: 33%
-                transition: opacity 1s, transform 1s
+                width: 15%
+                bottom: 14.5%
+                left: 18%
+                transition: opacity 1s
             .kv-teapot-right
-                width: 7%
-                bottom: 18%
-                right: 33%
-                transition: opacity 1s, transform 1s
-            .kv-peacock-left,
+                width: 15%
+                bottom: 14.5%
+                right: 18%
+                transition: opacity 1s
             .kv-peacock-left-fade
-                width: 72%
-                top: 34%
-                left: 14%
-                transition: opacity 1s, transform 1s
-            .kv-peacock-right,
+                width: 110%
+                bottom: 0
+                left: -16%
             .kv-peacock-right-fade
-                width: 72%
-                top: 34%
-                right: 14%
-                transition: opacity 1s, transform 1s
-            .kv-peacock-left-fade,
-            .kv-peacock-right-fade
-                opacity: 0
-                transition: opacity 1s, transform 1s
+                width: 110%
+                bottom: 0
+                right: -16%
 
             .article-1,
             .article-2
@@ -104,8 +114,8 @@ body
                 margin: auto
                 left: 0
                 right: 0
-                width: 40%
-                top: 20%
+                width: 65%
+                top: 3%
                 text-align: center
                 line-height: 175%
                 opacity: 0
@@ -115,15 +125,11 @@ body
                     +font-large
                 .article-title
                     display: block
-                    width: 75%
+                    width: 100%
                     margin: auto
                     filter: drop-shadow(0 0 0.25em #000)
                 .word-flex
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    gap: 0.5rem
-                    margin-top: 1rem
+                    margin-top: 1.5rem
                     p
                         img
                             display: inline-block
@@ -133,62 +139,17 @@ body
                             margin-top: -0.15em
             .article-1
                 opacity: 1
-                transform: translateY(6rem)
                 .article-title
                     filter: drop-shadow(0 0.25rem 0.5em rgba(#000, 0.5))
-                p
-                    opacity: 0
-                    transition: opacity 1s, transform 1s
             .article-2
-                top: 12%
+                top: 10%
             &.step-1
-                .kv-palace,
-                .kv-title
-                    opacity: 0
-                    transform: translateY(-50%)
-                .kv-teapot-left
-                    transform: translate(50%, 50%)
-                .kv-teapot-right
-                    transform: translate(-50%, 50%)
-                .kv-peacock-left,
-                .kv-peacock-left-fade
-                    transform: translate(-5%, 0%)
-                .kv-peacock-right,
-                .kv-peacock-right-fade
-                    transform: translate(5%, 0%)
-                .article-1
-                    opacity: 1
-                    transform: translateY(0)
-                    p
-                        opacity: 1
-            &.step-2
-                .kv-palace,
-                .kv-title
-                    opacity: 0
-                    transform: translateY(-50%)
-                .kv-table,
-                .kv-tea-left,
-                .kv-tea-right,
-                .kv-teapot-left,
-                .kv-teapot-right,
-                .kv-peacock-left,
-                .kv-peacock-right
-                    opacity: 0
                 .kv-table,
                 .kv-tea-left,
                 .kv-tea-right,
                 .kv-teapot-left,
                 .kv-teapot-right
-                    transform: translateY(5rem)
-                .kv-peacock-left-fade,
-                .kv-peacock-right-fade
-                    opacity: 1
-                .kv-peacock-left,
-                .kv-peacock-left-fade
-                    transform: translate(-15%, -2%) scale(0.8)
-                .kv-peacock-right,
-                .kv-peacock-right-fade
-                    transform: translate(15%, -2%) scale(0.8)
+                    opacity: 0
                 .article-1
                     opacity: 0
                     transform: translateY(-5rem)
@@ -200,6 +161,7 @@ body
     position: relative
     width: 100%
     height: 150vh
+    min-height: 100vh
     .intro-sticky
         position: sticky
         top: 0
@@ -207,6 +169,7 @@ body
         width: 100%
         height: 100vh
         overflow: hidden
+        min-height: 100vh
         .intro-bg
             pointer-events: none
             position: absolute
@@ -217,34 +180,36 @@ body
             mask-image: url('../img/intro-mask.svg')
             mask-repeat: no-repeat
             mask-position: center center
-            mask-size: 35%
+            mask-size: 65%
             transition: mask-size 1s
             img
-                +centerAb
-                transform-origin: top left
-                transform: scale(0.45) translate(-50%, -50%)
-                transition: transform 1.5s
+                position: absolute
+                top: 50%
+                left: 50%
+                transform-origin: left top
+                transform: scale(0.85) translate(-50%, -50%)
+                transition: top 0.25s, transform 0.25s
         .intro-frame
             pointer-events: none
             +centerAb
-            width: 50%
+            width: 90%
             transform-origin: top left
             transform: scale(0.7) translate(-50%, -50%)
             transition: transform 1s, opacity 1s
         .img-flower
             pointer-events: none
             +centerAb
-            width: 12%
+            width: 22%
             transition: opacity 1s
         &.step-1
             .intro-bg
-                mask-size: 175%
+                mask-size: 300%
                 img
-                    transform: scale(1.1) translate(-50%, -50%)
-                    transition: transform 0.5s
+                    top: 0
+                    transform: scale(3) translate(-50%, 0%)
             .intro-frame
                 opacity: 0
-                transform: scale(3.25) translate(-50%, -50%)
+                transform: scale(2.75) translate(-50%, -50%)
             .img-flower
                 opacity: 0
             .intro-content
@@ -252,26 +217,25 @@ body
                 opacity: 1
                 transition: opacity 1s 1s
         .intro-content
-            position: relative
-            display: flex
-            justify-content: center
-            align-items: center
             width: 100%
-            min-height: 100%
+            padding: 10% 7%
             pointer-events: none
             opacity: 0
+            text-align: center
             transition: opacity 0.5s 0s
             .intro-flex
-                display: flex
-                justify-content: flex-end
-                align-items: stretch
-                width: 1100px
-                gap: 1.5rem
                 .intro-title
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    flex-direction: column
+                    position: relative
+                    padding: 1rem 0
+                    &::before
+                        position: absolute
+                        display: block
+                        content: ''
+                        width: 90%
+                        height: 2px
+                        bottom: 0
+                        left: 5%
+                        background: linear-gradient(to bottom, #d0b962, #FFF, #d0b962)
                     h2
                         +font-huge
                         text-shadow: 0 0 0.5em rgba(#000, 0.5)
@@ -282,25 +246,14 @@ body
                             margin: 0 0.25em
                             margin-top: -0.15em
                         .img-and
-                            display: block
-                            margin: 1rem auto
+                            display: inline-block
+                            width: 1em
                             filter: drop-shadow(0 0 0.5em rgba(#000, 0.5))
                 .intro-info
                     position: relative
-                    width: 65%
-                    padding-left: 2rem
-                    &::before
-                        position: absolute
-                        display: block
-                        content: ''
-                        height: 100%
-                        width: 2px
-                        top: 0
-                        left: 0
-                        background: linear-gradient(to bottom, #d0b962, #FFF, #d0b962)
                     .intro-tab
                         display: flex
-                        justify-content: flex-start
+                        justify-content: center
                         align-items: center
                         gap: 0.5rem
                         a
@@ -326,36 +279,38 @@ body
                     .intro-info-wrap
                         .intro-info-block
                             > p
+                                line-height: 175%
                                 text-shadow: 0 0 0.5em rgba(#000, 0.5)
                             .info-flex
                                 display: flex
                                 justify-content: flex-start
                                 align-items: flex-start
                                 gap: 1rem
+                                text-align: left
                                 img
                                     display: block
-                                    width: 20%
-                                    margin-top: 0.5rem
+                                    width: 25%
+                                    margin-top: 0.25rem
                                 article
                                     flex: 1 0 0
                                     h4
                                         +font-large
-                                        margin-bottom: 1rem
+                                        margin-bottom: 0.5rem
                             
 
 .design
     position: relative
-    padding: 3rem 0
+    padding: 2.5rem 0
     .design-deco-left-top,
     .design-deco-right-top
         position: absolute
-        top: 0
-        width: 300px
+        top: 3.5rem
+        width: 30%
     .design-deco-left-bottom,
     .design-deco-right-bottom
         position: absolute
         bottom: 0
-        width: 300px
+        width: 30%
     .design-deco-left-top,
     .design-deco-left-bottom
         left: 0
@@ -364,98 +319,77 @@ body
         right: 0
     .design-block
         position: relative
-        width: 1000px
+        width: 95%
         margin: auto
         .butterfly-left,
         .butterfly-right
             position: absolute
-            width: 2rem
+            width: 5%
         .butterfly-left
-            top: 70%
-            left: -100px
+            top: 59%
+            left: 5%
         .butterfly-right
-            top: 35%
-            right: -100px
+            top: 20%
+            right: 5%
         h2
             +font-huge
             font-weight: normal
             text-align: center
-            line-height: 125%
+            line-height: 135%
         p
             margin-top: 0.5rem
             text-align: center
+            line-height: 175%
         .design-flex
             width: 82%
             margin: 3rem auto
-            display: flex
-            justify-content: space-between
-            align-items: flex-start
             gap: 2rem
+            text-align: center
             div
                 flex: 1 0 0
+                img
+                    display: block
+                    width: 70%
+                    margin: auto
                 h3
                     +font-large
                 article
-                    +font-mini
-                    padding: 0.5rem
+                    padding: 0.5rem 0
+                    line-height: 175%
             .img-and
                 display: block
                 width: 2.5rem
-                margin-top: 8rem
+                margin: 3rem auto
                 filter: drop-shadow(0 0 0.5em rgba(#000, 0.5))
-            .yt-wrap
-                position: relative
+        .yt-wrap
+            position: relative
+            width: 100%
+            padding-top: 56.25%
+            overflow: hidden
+            iframe
+                +centerAb
                 width: 100%
-                padding-top: 56.25%
-                overflow: hidden
-                iframe
-                    +centerAb
-                    width: 100%
-                    height: 100%
+                height: 100%
         .design-line
             display: block
-            width: 88%
-            margin: auto
+            width: 100%
             transform: scale(1, -1)
 
 .box
     position: relative
-    .box-deco-left-top,
-    .box-deco-right-top,
-    .box-deco-left-bottom,
-    .box-deco-right-bottom
-        position: absolute
-        width: 350px
-    .box-deco-left-top,
-    .box-deco-right-top
-        top: 0
-    .box-deco-left-bottom,
-    .box-deco-right-bottom
-        bottom: 0
-    .box-deco-left-top,
-    .box-deco-left-bottom
-        left: 0
-    .box-deco-right-top,
-    .box-deco-right-bottom
-        right: 0
-    .box-deco-right-top
-        transform: scale(-1, 1)
-    .box-deco-left-bottom
-        transform: scale(1, -1)
-    .box-deco-right-bottom
-        transform: scale(-1, -1)
     .box-wrap
-        width: 1000px
+        width: 95%
         margin: auto
-        padding: 5rem 0
+        padding: 1.5rem 0
+        text-align: center
         .box-title
-            width: 45%
+            width: 90%
             margin: auto
             text-align: center
             p
                 padding: 1rem 0
+                line-height: 175%
         article
-            text-align: center
             h2
                 +font-huge
                 img
@@ -474,13 +408,13 @@ body
             position: relative
             margin: 0.5rem 0
             .swiper
-                width: 88%
+                width: 85%
                 margin: auto
             .swiper-slide
                 width: 100%
             .swiper-button-prev,
             .swiper-button-next
-                width: 3rem
+                width: 2rem
                 &::after
                     display: none
             .swiper-button-prev
@@ -488,39 +422,30 @@ body
             .swiper-button-next
                 right: 0
         .box-flex
-            display: flex
-            justify-content: space-between
-            align-items: flex-start
-            gap: 2rem
-            width: 88%
+            width: 85%
             margin: 1rem auto
             article
-                flex: 1 0 0
-                text-align: left
                 h3
                     +font-large
                 p
                     margin-top: 1rem
             div
-                flex: 1 0 0
+                margin-top: 1.5rem
                 p
-                    +font-mini
+                    +font-small
                     letter-spacing: 0
                     margin: 1rem 0 1.5rem 0
+                    line-height: 175%
             .btn-buy
                 display: block
-                width: 14rem
-        .design-line
-            display: block
-            width: 80%
-            margin: 3rem auto
-            transform: scale(1, -1)
+                width: 60%
+                margin: auto
 
 .product
     position: relative
-    padding: 5rem 0
+    padding: 2.5rem 0
     .product-wrap
-        width: 1000px
+        width: 95%
         margin: auto
         text-align: center
         h2
@@ -536,14 +461,12 @@ body
             width: 65%
             margin: 1rem auto
         .product-flex
-            display: flex
-            justify-content: space-between
-            align-items: flex-start
-            gap: 3rem
             > div
-                flex: 1 0 0
+                margin: 3rem auto
+                > img
+                    padding: 0 10%
                 article
-                    padding: 1rem 15%
+                    padding: 1rem 5%
                     h4
                         +font-large
                     p
@@ -551,12 +474,12 @@ body
                         line-height: 175%
                     a
                         display: block
-                        width: 14rem
+                        width: 60%
                         margin: auto
                     .product-des
                         display: block
-                        width: 10rem
-                        margin: 1rem auto
+                        width: 35%
+                        margin: 0.5rem auto 1rem auto
                     h5
                         text-align: left
                         font-weight: normal

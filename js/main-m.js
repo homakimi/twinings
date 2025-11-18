@@ -4,11 +4,6 @@ $(function() {
         detectScroll();
     })
 
-    resizeBlock();
-    $(window).resize(function() {
-        resizeBlock();
-    })
-
 
     $('.box-swiper').each(function(index) {
         $(this).addClass('box-swiper-'+index)
@@ -24,21 +19,6 @@ $(function() {
     })
 
 })
-
-function resizeBlock() {
-    const designW = $('.kv-scale').width();
-    const designH = $('.kv-scale').height();
-
-    const ww = $(window).width();
-    const wh = $(window).height();
-
-    // 依照寬高
-    // const scale = Math.min(wh / designH, ww / designW);
-    // 依照高
-    const scale = Math.min(wh / designH); 
-    $('.kv-wrap').css('width', designW*scale).css('height', designH*scale);
-    $('.kv-scale').css({transform: 'translateX(-50%) scale(' + scale + ')'});
-}
 
 $(document)
 .on('click', 'a', function(e) {
@@ -61,31 +41,19 @@ $(document)
 })
 
 var kvLock1 = false;
-var kvLock2 = false;
 var introLock = false;
 function detectScroll() {
     var _kvProgress = ($(window).scrollTop() - $('.kv').offset().top) / $('.kv-wrap').height()
-    if(_kvProgress < 0.3) {
-        $('.kv-scale').removeClass('step-1 step-2');
+    if(_kvProgress < 0.5) {
+        $('.kv-scale').removeClass('step-1');
         kvLock1 = false;
-        kvLock2 = false;
     }
-    else if(_kvProgress >= 0.3 && _kvProgress < 0.7) {
-        $('.kv-scale').removeClass('step-2').addClass('step-1');
-        kvLock2 = false;
+    else if(_kvProgress >= 0.5) {
+        $('.kv-scale').addClass('step-1');
         if (!kvLock1) {
-            $(window).scrollTop($('.kv').offset().top + $('.kv-wrap').height() * 0.3 + 5);
+            $(window).scrollTop($('.kv').offset().top + $('.kv-wrap').height() * 0.5 + 5);
             setTimeout(function() {
                 kvLock1 = true;
-            }, 1000)
-        }
-    }
-    else if(_kvProgress >= 0.7 && _kvProgress < 1) {
-        $('.kv-scale').removeClass('step-1').addClass('step-2');
-        if (!kvLock2) {
-            $(window).scrollTop($('.kv').offset().top + $('.kv-wrap').height() * 0.7 + 5);
-            setTimeout(function() {
-                kvLock2 = true;
             }, 1000)
         }
     }
@@ -97,10 +65,10 @@ function detectScroll() {
             $(window).scrollTop($('.intro').offset().top + $('.intro').height() * 0.25 + 5);
             setTimeout(function() {
                 introLock = true;
-            }, 1500)
+                $('.intro-sticky').css('position', 'relative').css('height', 'auto');
+                $('.intro').css('height', 'auto');
+                $(window).scrollTop($('.intro').offset().top);
+            }, 1250)
         }
-    } else {
-        introLock = false;
-        $('.intro-sticky').removeClass('step-1');
     }
 }
