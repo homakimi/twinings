@@ -1,8 +1,35 @@
+var menuHeight = 150;
 $(function() {
+
+    var _vh = window.innerHeight*1.1;
+    // vh
+    $('.kv').css('height', _vh*2);
+    $('.intro').css('height', _vh*1.5).css('min-height', _vh*1.1);
+    $('.intro-sticky').css('height', _vh).css('min-height', _vh*1.1);
+
+    if($('.menu_content').length > 0) {
+        resize();
+    }
+    $(window).resize(function() {
+        if($('.menu_content').length > 0) {
+            resize()
+        }
+    });
+
+    function resize() {
+        menuHeight = Math.min(150, 150 * (window.innerWidth/600));
+        $('.menu_content').css('height', menuHeight)
+        $('.intro-content').css('padding-top', menuHeight + _vh*0.05);
+        $('.kv-first').css('padding-top', menuHeight + _vh*0.05);
+        $('.kv-wrap').css('top', menuHeight).css('height', _vh - menuHeight);
+        $('.kv-scale').css('height', _vh*0.88)
+    }
+
     detectScroll();
     $(window).scroll(function() {
         detectScroll();
     })
+
 
 
     $('.box-swiper').each(function(index) {

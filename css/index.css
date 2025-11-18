@@ -28,6 +28,19 @@ body::before {
   background-size: cover;
 }
 
+.menu_content {
+  position: relative;
+  height: 200px;
+  background: #EEE;
+}
+.menu_content p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+}
+
 .kv {
   position: relative;
   width: 100%;
@@ -642,8 +655,20 @@ body::before {
   margin: 1rem 0 1.5rem 0;
 }
 .box .box-wrap .box-flex .btn-buy {
+  position: relative;
   display: block;
   width: 14rem;
+}
+.box .box-wrap .box-flex .btn-buy .hover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.box .box-wrap .box-flex .btn-buy:hover .hover {
+  opacity: 1;
 }
 .box .box-wrap .design-line {
   display: block;
@@ -695,10 +720,22 @@ body::before {
   margin: 0.5rem 0;
   line-height: 175%;
 }
-.product .product-wrap .product-flex > div article a {
+.product .product-wrap .product-flex > div article .btn-buy {
+  position: relative;
   display: block;
   width: 14rem;
   margin: auto;
+}
+.product .product-wrap .product-flex > div article .btn-buy .hover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.product .product-wrap .product-flex > div article .btn-buy:hover .hover {
+  opacity: 1;
 }
 .product .product-wrap .product-flex > div article .product-des {
   display: block;

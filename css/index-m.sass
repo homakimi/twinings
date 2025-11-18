@@ -14,8 +14,33 @@
 body
     position: relative
     color: $white
-    background: url('../img/bg-m.jpg') #002a34 repeat-y top center
-    background-size: 600px auto
+    &::before
+        position: fixed
+        display: block
+        content: ''
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 600px
+        background: url('../img/bg-m.jpg') repeat-y top center
+        background-size: 100% auto
+
+.menu_content
+    z-index: 1
+    position: fixed
+    max-width: 600px
+    margin: auto
+    top: 0
+    left: 0
+    right: 0
+    margin: auto
+    background: #EEE
+    p
+        +centerAb
+        color: #000
 
 .kv-first,
 .kv,
@@ -33,8 +58,8 @@ body
     justify-content: center
     align-items: center
     flex-direction: column
-    min-height: 80vh
-    padding: 10% 0
+    // min-height: 80vh
+    padding-bottom: 10%
     .deco
         display: block
         width: 8%
@@ -57,16 +82,14 @@ body
     height: 200vh
     .kv-wrap
         position: sticky
-        top: 0
+        // top: 0
         left: 0
         width: 100%
-        height: 50%
-        overflow: hidden
+        // height: 50%
         .kv-scale
             position: relative
             width: 100%
-            padding-top: percentage(925/758)
-            +centerAb
+            overflow: hidden
             > img
                 position: absolute
             .kv-frame
@@ -115,11 +138,11 @@ body
                 left: 0
                 right: 0
                 width: 65%
-                top: 3%
+                top: 45%
                 text-align: center
                 line-height: 175%
                 opacity: 0
-                transform: translateY(5rem)
+                transform: translateY(-50%)
                 transition: opacity 1s, transform 1s
                 h3
                     +font-large
@@ -142,7 +165,7 @@ body
                 .article-title
                     filter: drop-shadow(0 0.25rem 0.5em rgba(#000, 0.5))
             .article-2
-                top: 10%
+                transform: translateY( calc( -50% + 5rem ))
             &.step-1
                 .kv-table,
                 .kv-tea-left,
@@ -152,10 +175,10 @@ body
                     opacity: 0
                 .article-1
                     opacity: 0
-                    transform: translateY(-5rem)
+                    transform: translateY( calc( -50% - 5rem ))
                 .article-2
                     opacity: 1
-                    transform: translateY(0)
+                    transform: translateY(-50%)
 
 .intro
     position: relative
