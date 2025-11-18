@@ -1,6 +1,6 @@
 @import 'set'
 
-.for-pc
+.for-m
     display: none !important
     
 [data-scroll-show]
@@ -223,7 +223,7 @@ body
                 +centerAb
                 transform-origin: top left
                 transform: scale(0.45) translate(-50%, -50%)
-                transition: transform 1s
+                transition: transform 1.5s
         .intro-frame
             pointer-events: none
             +centerAb
@@ -241,9 +241,10 @@ body
                 mask-size: 175%
                 img
                     transform: scale(1.1) translate(-50%, -50%)
+                    transition: transform 0.5s
             .intro-frame
                 opacity: 0
-                transform: scale(2.5) translate(-50%, -50%)
+                transform: scale(3.25) translate(-50%, -50%)
             .img-flower
                 opacity: 0
             .intro-content
@@ -477,8 +478,6 @@ body
                 margin: auto
             .swiper-slide
                 width: 100%
-                padding-top: 56.25%
-                +bgCover
             .swiper-button-prev,
             .swiper-button-next
                 width: 3rem

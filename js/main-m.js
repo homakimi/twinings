@@ -15,6 +15,7 @@ $(function() {
         new Swiper('.box-swiper-'+index+' .swiper', {
             speed: 750,
             spaceBetween: 50,
+            autoHeight: true,
             navigation: {
                 nextEl: '.box-swiper-'+index+' .swiper-button-next',
                 prevEl: '.box-swiper-'+index+' .swiper-button-prev',
