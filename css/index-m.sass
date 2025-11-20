@@ -28,7 +28,7 @@ body
         background: url('../img/bg-m.jpg') repeat-y top center
         background-size: 100% auto
 
-.menu_content
+.fake_menu
     z-index: 1
     position: fixed
     max-width: 600px
@@ -152,7 +152,12 @@ body
                     margin: auto
                     filter: drop-shadow(0 0 0.25em #000)
                 .word-flex
-                    margin-top: 1.5rem
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    gap: 1rem
+                    margin-top: 1rem
+                    +font-small
                     p
                         img
                             display: inline-block
@@ -508,3 +513,8 @@ body
                         font-weight: normal
                         +font-small
                         margin: 0.5rem 0
+        .product-logo
+            margin-top: 1.5rem
+            h5
+                +font-big
+                margin-bottom: 1rem

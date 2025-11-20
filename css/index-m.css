@@ -31,7 +31,7 @@ body::before {
   background-size: 100% auto;
 }
 
-.menu_content {
+.fake_menu {
   z-index: 1;
   position: fixed;
   max-width: 600px;
@@ -42,7 +42,7 @@ body::before {
   margin: auto;
   background: #EEE;
 }
-.menu_content p {
+.fake_menu p {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -179,7 +179,12 @@ body::before {
 }
 .kv .kv-wrap .kv-scale .article-1 .word-flex,
 .kv .kv-wrap .kv-scale .article-2 .word-flex {
-  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 .kv .kv-wrap .kv-scale .article-1 .word-flex p img,
 .kv .kv-wrap .kv-scale .article-2 .word-flex p img {
@@ -630,4 +635,11 @@ body::before {
   font-weight: normal;
   font-size: 0.9rem;
   margin: 0.5rem 0;
+}
+.product .product-wrap .product-logo {
+  margin-top: 1.5rem;
+}
+.product .product-wrap .product-logo h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=index-m.css.map */

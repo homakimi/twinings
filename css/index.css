@@ -28,12 +28,12 @@ body::before {
   background-size: cover;
 }
 
-.menu_content {
+.fake_menu {
   position: relative;
   height: 200px;
   background: #EEE;
 }
-.menu_content p {
+.fake_menu p {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -747,4 +747,11 @@ body::before {
   font-weight: normal;
   font-size: 0.9rem;
   margin: 0.5rem 0;
+}
+.product .product-wrap .product-logo {
+  margin-top: 1.5rem;
+}
+.product .product-wrap .product-logo h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=index.css.map */

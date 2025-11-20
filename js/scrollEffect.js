@@ -41,6 +41,15 @@ $(function() {
                     }
                 }
             }
+            if($(window).scrollTop() + window.innerHeight > $(document).height() - window.innerHeight*0.25) {
+                if($(this).data('scroll-show').length === 0) {
+                    $(this).addClass('scrollShowActive');
+                } else {
+                    setTimeout(function() {
+                        $(this).addClass('scrollShowActive');
+                    }.bind(this), $(this).data('scroll-show'))
+                }
+            }
         })
     }
 })
