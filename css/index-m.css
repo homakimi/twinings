@@ -31,6 +31,15 @@ body::before {
   background-size: 100% auto;
 }
 
+section {
+  color: #e6e1cf;
+  line-height: normal;
+  font-family: "Noto Serif TC", serif;
+}
+section h1, section h2, section h3, section h4, section h5, section h6 {
+  font-weight: bold;
+}
+
 .fake_menu {
   z-index: 1;
   position: fixed;
