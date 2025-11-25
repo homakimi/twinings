@@ -39,6 +39,10 @@ section {
 section h1, section h2, section h3, section h4, section h5, section h6 {
   font-weight: bold;
 }
+section div, section span, section h1, section h2, section h3, section h4, section h5, section h6, section p {
+  font-family: "Noto Serif TC", serif;
+  line-height: normal;
+}
 
 .fake_menu {
   z-index: 1;
