@@ -479,7 +479,6 @@ section div, section span, section h1, section h2, section h3, section h4, secti
 }
 .design .design-block .design-flex div article {
   padding: 0.5rem 0;
-  line-height: 175%;
 }
 .design .design-block .design-flex .img-and {
   display: block;
@@ -523,7 +522,6 @@ section div, section span, section h1, section h2, section h3, section h4, secti
 }
 .box .box-wrap .box-title p {
   padding: 1rem 0;
-  line-height: 175%;
 }
 .box .box-wrap article h2 {
   font-size: 2rem;
